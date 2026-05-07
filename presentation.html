@@ -154,16 +154,14 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
 }
 .hand-note.dim { color: var(--paper-ink-faint); }
 .scribble-underline {
-  position: relative;
-  display: inline-block;
   font-weight: 600;
-}
-.scribble-underline::after {
-  content: '';
-  position: absolute;
-  left: -2px; right: -2px; bottom: -4px;
-  height: 8px;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 Q 30 1 60 7 T 120 6 T 198 9' stroke='%23c45a3d' stroke-width='3' fill='none' stroke-linecap='round'/></svg>") no-repeat center / 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 8 Q 30 1 60 7 T 120 6 T 198 9' stroke='%23d63333' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 0.55em;
+  background-position: 0 100%;
+  padding-bottom: 0.18em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /* tape */
@@ -567,6 +565,8 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
   border: 1px solid var(--paper-rule-soft);
   padding: 14px 16px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .compare-col.us {
   border: 1.5px solid var(--paper-accent);
@@ -609,7 +609,6 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
   color: var(--paper-accent);
   line-height: 1.3;
 }
-.compare-col.minor .verdict { color: var(--paper-ink-faint); }
 
 /* ─── PROMPT BOX ─── */
 .prompt-box {
@@ -1380,10 +1379,6 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
 
   <div class="eyebrow">★ о чём пойдёт речь</div>
   <h1 class="h1">Содержание.</h1>
-  <p class="lede" style="max-width: 140mm;">
-    Я постарался максимально подробно описать систему. Получилось много, но даже
-    так в этом документе покрыта только основа.
-  </p>
 
   <ol class="toc-list">
     <li>
@@ -1394,44 +1389,44 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
     </li>
     <li>
       <span class="ttl">Соавторы
-        <span class="sub">три персоны, четыре варианта, итеративная работа</span>
+        <span class="sub">различные персоны под каждый стиль</span>
       </span>
       <span class="pg">с. 04–07</span>
-    </li>
-    <li>
-      <span class="ttl">Бета-ридеры
-        <span class="sub">шесть видов проверок и собственные характеры</span>
-      </span>
-      <span class="pg">с. 08</span>
     </li>
     <li>
       <span class="ttl">Канон
         <span class="sub">сеттинг, персонажи, связи. Соавтор всё помнит</span>
       </span>
+      <span class="pg">с. 08</span>
+    </li>
+    <li>
+      <span class="ttl">Бета-ридеры
+        <span class="sub">шесть видов проверок и собственные характеры</span>
+      </span>
       <span class="pg">с. 09</span>
     </li>
     <li>
       <span class="ttl">Импорт рукописей
-        <span class="sub">автосплит на главы, POV, продолжение сцен</span>
+        <span class="sub">автосплит на главы, определение канона и POV</span>
       </span>
       <span class="pg">с. 10</span>
     </li>
     <li>
       <span class="ttl">Испытания и обучение
-        <span class="sub">«Фэнтези за 30 дней», немые сцены, скиллы</span>
+        <span class="sub">как сервис помогает улучшать стиль письма</span>
       </span>
       <span class="pg">с. 11</span>
     </li>
     <li>
-      <span class="ttl">Манифест и доступ
-        <span class="sub">Соавтор как помощник, а не подменщик. Бесплатный доступ</span>
+      <span class="ttl">Манифест
+        <span class="sub">Краткое саммари</span>
       </span>
       <span class="pg">с. 12</span>
     </li>
   </ol>
 
   <span class="hand-note" style="margin-top: 18px;">
-    p.s. этой презой можно делиться с коллегами по цеху. Дам доступ на ЗБТ.
+    p.s. этой презой можно делиться с коллегами по цеху. Дам доступ на Бету.
   </span>
 
   <div class="page-foot"><span>Писатель &amp; Со · обзор</span><span class="pn">02</span></div>
@@ -1445,10 +1440,7 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
   </div>
 
   <div class="section-tag">Раздел 01</div>
-  <h1 class="h1">Что вообще <span style="font-style: italic;">болит</span>.</h1>
-  <p class="lede" style="max-width: 145mm;">
-    Если прям очень лаконично, система предлагает соавтора как замену "гпт и чатов" с усилением всего, что те умеют и представлением новых функций.
-  </p>
+  <h1 class="h1">Какие проблемы <span style="font-style: italic;">решаем</span>.</h1>
 
   <h3 class="h3" style="margin-top: 18px;">Основные проблемы</h3>
   <div class="problem-cols">
@@ -1459,52 +1451,52 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
     </div>
     <div class="problem">
       <div class="nm">№ 02</div>
-      <div class="tt">Генерация и структуризация идей</div>
-      <div class="ds">"Что-то вертится на языке, а сформулировать не могу".</div>
+      <div class="tt">Генерация идей</div>
+      <div class="ds">Идея вертится на языке, а сформулировать не могу.</div>
     </div>
     <div class="problem">
       <div class="nm">№ 03</div>
       <div class="tt">Прокрастинация</div>
-      <div class="ds">Открыл редактор, закрыл редактор, пошёл за чаем.</div>
+      <div class="ds">Вечный цикл: открыл редактор, закрыл редактор, пошёл за чаем.</div>
     </div>
     <div class="problem">
       <div class="nm">№ 04</div>
-      <div class="tt">Расплытие канона</div>
-      <div class="ds">Персонажи, сеттинг, факты — кто-то в седьмой главе вдруг блондин.</div>
+      <div class="tt">Убираем нестыковки</div>
+      <div class="ds">Кто-то в седьмой главе вдруг блондин, или у главной героини воскрес отец.</div>
     </div>
     <div class="problem">
       <div class="nm">№ 05</div>
       <div class="tt">Усталость от редактуры</div>
-      <div class="ds">Эффект "замыленных глаз"</div>
+      <div class="ds">Пропускаются ошибки из-за эффект "замыленных глаз".</div>
     </div>
     <div class="problem">
       <div class="nm">№ 06</div>
-      <div class="tt">Быстрая проверка сцен</div>
-      <div class="ds">Под разными углами и характерами читателей.</div>
+      <div class="tt">Отсутствие фидбэка</div>
+      <div class="ds">Некому показать свой черновик или ридеры вечно заняты.</div>
     </div>
   </div>
 
-  <h3 class="h3" style="margin-top: 22px;">Второстепенное</h3>
+  <h3 class="h3" style="margin-top: 22px;">Дополнительно предлагаем</h3>
   <div class="problem-cols">
     <div class="problem minor">
       <div class="nm">+ 01</div>
       <div class="tt">Обучение прозе</div>
-      <div class="ds">Системно и с обратной связью на реальный текст.</div>
+      <div class="ds">с помощью системы испытаний формата "книга за 30 дней шаг за шагов".</div>
     </div>
     <div class="problem minor">
       <div class="nm">+ 02</div>
-      <div class="tt">Внедрение новых персонажей</div>
-      <div class="ds">Без разрушения уже выстроенного сеттинга.</div>
+      <div class="tt">Идеи для новых персонажей</div>
+      <div class="ds">с учётом уже выстроенного сеттинга и без зловещих братов-близнецов.</div>
     </div>
     <div class="problem minor">
       <div class="nm">+ 03</div>
-      <div class="tt">Бета-ридинг</div>
-      <div class="ds">Несколько разных читателей со своими характерами.</div>
+      <div class="tt">Бета-ридеры</div>
+      <div class="ds">всегда читающие черновики и ищущие несстыковки.</div>
     </div>
     <div class="problem minor">
       <div class="nm">+ 04</div>
       <div class="tt">Оживление сцен</div>
-      <div class="ds">Через различные проф. приёмы.</div>
+      <div class="ds">через различные профессиональные приёмы.</div>
     </div>
   </div>
 
@@ -1518,17 +1510,13 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
     <div class="crumbs">часть 02 / 06</div>
   </div>
 
-  <div style="margin-top: 20px;">
-    <span class="pull">Часть проблем так или иначе решает DeepSeek, Qwen, ГигаЧат, но "косячно". Предлагаю сравнить.</span>
-  </div>
-
   <div style="margin-top: 18mm;">
     <div class="num">02</div>
     <h1 class="ttl">Система <span class="ital">Соавторов.</span></h1>
     <p class="desc">
-      Это три персоны, которые нужны для различных задач. Например, Клайд хорошо работает с диалогами, Эвелин — для драмы и так далее. Соавторы настраиваются под предпочтения пользователя.
+      Три персоны: Клайд хорошо работает с диалогами, Эвелин — для драмы, Люкс для фактов. Соавторы настраиваются под предпочтения пользователя.
     </p>
-    <div class="extra">★ Персоны доступны всем и обучены на различных сценариях. Для каждой книги можно определять свою, но они первичны именно для стиля.</div>
+    <div class="extra">★ Персоны обучены на различных сценариях, но не меняют стиль автора. Для каждой книги можно определять свою.</div>
   </div>
 
   <div class="page-foot"><span>02 · соавторы</span><span class="pn">04</span></div>
@@ -1562,14 +1550,11 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
     </div>
   </div>
 
-  <h3 class="h3" style="margin-top: 22px;">Демонстрация — пролог по новой идее</h3>
-  <p>
-    Абсолютно новая книга, моя новая идея (как пример!). Выбрал соавтора Клайда — попросил сделать пролог на основе моей идеи.
-    Пролог получился чистым и нормальным. После этого произошло извлечение персонажей.<br />
-    Оно идёт <span class="scribble-underline">фоном</span>.<br />Соавтор создал персонажей по моему запросу и сразу сохранил их из фрагмента, который я выбрал. Сразу заметка готова по нему (могу новую делать или актуализировать старую).
-    Если что, на фотки можно кликать, там их три.
-  </p>
+  <h3 class="h3" style="margin-top: 22px;">Демонстрация работы</h3>
 
+  <p style="margin-top: 4px;">
+   Предлагаю посмотреть видео, как за четыре минуты Клайд создаёт пролог и пару сцен на основе моей идеи.
+  </p>
   <div class="row gap-sm" style="margin-top: 10px; gap: 10px;">
     <div class="media" style="flex: 1.3; height: 60mm;">
       <video src="assets/video-2.mp4">
@@ -1580,101 +1565,34 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
       <img src="assets/3.jpg" />
     </div>
   </div>
+  <p style="margin-top: 4px;">
+    Клайд создал чистый пролог без нейро-штампов, обычных для чат-моделей, и фоном извлёк персонажей.
+  </p>
 
   <div class="page-foot"><span>02 · соавторы</span><span class="pn">05</span></div>
 </section>
 
-<!-- ════════════════ Соавторы — четыре варианта + операции ════════════════ -->
-<section class="page" data-screen-label="06 Четыре варианта">
-  <div class="page-head">
-    <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
-    <div class="crumbs">02 · соавторы / подход</div>
-  </div>
-
-  <div class="eyebrow">★ четыре варианта на каждый шаг</div>
-  <h2 class="h2">Подход через варианты.</h2>
-  <p class="lede" style="max-width: 145mm;">
-    Соавтор всегда предлагает четыре разных продолжения сцены — через свет,
-    органы чувств, других персонажей, ритм и так далее (ниже только примеры!). Работает итеративно: 200–300 слов
-    на сцену (в режиме прозы 1000+), чтобы выбирать по ходу.
-  </p>
-
-  <div class="variants">
-    <div class="variant">
-      <div class="vt">↳ через свет / атмосферу</div>
-      <div class="vd">— Духи, — начал он и замолчал. Солнце било в глаз, слепило, но на языке не было ни вкуса, ни тепла.</div>
-    </div>
-    <div class="variant">
-      <div class="vt">↳ через органы чувств</div>
-      <div class="vd">"Кислый запах перебродившей кассавы тянулся из глиняных мисок, которые женщины расставляли на циновке."</div>
-    </div>
-    <div class="variant">
-      <div class="vt">↳ через другого персонажа</div>
-      <div class="vd">Кво сидел на пороге хижины и наблюдал. — Ритуал не работает, если в чаше пусто.</div>
-    </div>
-    <div class="variant">
-      <div class="vt">↳ через ритм / разрыв</div>
-      <div class="vd">Макао упёрся ладонями в землю — сухая, растрескавшаяся глина царапала кожу. Он надавил сильнее, и пальцы провалились в пустоту. Под верхним слоем не было влаги. Ничего.</div>
-    </div>
-  </div>
-
-  <h3 class="h3" style="margin-top: 22px;">Что вообще умеет соавтор</h3>
-  <div class="chip-row">
-    <span class="chip">опенинги</span>
-    <span class="chip">персонажи</span>
-    <span class="chip">элементы сеттинга</span>
-    <span class="chip">сцены</span>
-    <span class="chip">диалоги</span>
-    <span class="chip">главы целиком</span>
-    <span class="chip">редактура</span>
-    <span class="chip">органы чувств</span>
-    <span class="chip">сократить</span>
-    <span class="chip">расширить</span>
-  </div>
-  <p style="margin-top: 8px;">
-    Соавтор работает как с новых абзацев, новых глав, так и по выделению конкретного фрагмента.
-  </p>
-
-  <h3 class="h3" style="margin-top: 18px;">Что важно</h3>
-  <p>
-    Соавтор всегда знает всех персонажей и книгу, ну и <b>не создаёт</b> персонажей, если об этом не попросить
-    напрямую текстом или свитчем.
-  </p>
-
-  <div class="row gap-sm" style="margin-top: 12px;">
-
-    <div class="media" style="flex: 1; height: 38mm;">
-      <img src="assets/6.jpg" />
-      <img src="assets/4.jpg" />
-      <img src="assets/5.jpg" />
-    </div>
-  </div>
-
-  <div class="page-foot"><span>02 · соавторы</span><span class="pn">06</span></div>
-</section>
-
 <!-- ════════════════ Соавторы — сравнение ════════════════ -->
-<section class="page" data-screen-label="07 Сравнение" style="height: auto; min-height: 297mm; padding-bottom: 28mm;">
+<section class="page" data-screen-label="06 Сравнение" style="height: auto; min-height: 297mm; padding-bottom: 28mm;">
   <div class="page-head">
     <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
     <div class="crumbs">02 · соавторы / сравнение</div>
   </div>
 
-  <div class="eyebrow">★ Соавтор vs. голая нейросетка</div>
+  <div class="eyebrow">★ Соавтор vs. DeepSeek</div>
   <h2 class="h2">Предлагаю наглядно сравнить.</h2>
   <p class="lede" style="max-width: 145mm;">
-    Один и тот же промт. Слева — кусок опенинга от Соавтора (был один из
-    четырёх вариантов, выбрал случайный). Справа — DeepSeek 4.0 Thinking,
-    самая последняя модель.
+    Использовался один и тот же промт для Соавтора и DeepSeek 4.0 Thinking. Слева — кусок опенинга от Соавтора (был один из
+    четырёх вариантов, выбрал случайный). Справа — DeepSeek 4.0 Thinking.
   </p>
 
   <div class="prompt-box">
-    <span class="pl">Промт для Deepseek (для Соавтора просто задача). Можно проверить :P</span>
-    <b>Книга:</b> «Дерево с золотыми корнями». <b>Синопсис:</b> земляне выжгли ресурсы и улетели,
+    <span class="pl">Промт для Deepseek.</span>
+    <b>Книга:</b> "Дерево с золотыми корнями".<br /><b>Синопсис:</b> земляне выжгли ресурсы и улетели,
     последний забыл закрыть дверь. Маленький народец восстанавливает природу
-    и думает, что он один. Но есть туземцы-люди, которые слыхом не слыхивали.
-    <b>Тон:</b> лёгкий. <b>Референс:</b> «Автостопом по Галактике». <b>Избегать:</b> драмы.
-    <b>Задача:</b> пролог — племя обсуждает, что еда кончилась и придётся принять
+    и думает, что он один. Но есть туземцы-люди, которые слыхом не слыхивали.<br />
+    <b>Тон:</b> лёгкий. <br /><b>Референс:</b> Автостопом по Галактике
+    <br /><b>Задача:</b> пролог — племя обсуждает, что еда кончилась и придётся принять
     предложение Португалии 500-летней давности. Когда-то они съели миссионеров.
   </div>
 
@@ -1701,81 +1619,106 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
     <div class="compare-col minor">
       <div class="label">DeepSeek 4.0 Thinking</div>
       <div class="quote">
-        <p>Старейшина Краб медленно обвёл взглядом собравшихся у костра. Восемь человек. Вся сознательная часть племени, если не считать младенца Тыквы, который в данный момент активно доказывал, что сознание — вещь переоценённая.</p>
+        <p>Старейшина Краб <span class="scribble-underline">медленно обвёл взглядом</span> собравшихся у костра. <span class="scribble-underline">Восемь человек</span>. Вся сознательная часть племени, если не считать младенца Тыквы, который в данный момент активно доказывал, что сознание — вещь переоценённая.</p>
         <p>— Еда кончилась, — сказал Краб. — Я короче.</p>
         <p>— Ты всегда так начинаешь, — вздохнула его жена по имени Восьмая Рыба. — В прошлый раз «еда кончилась» означало, что ты просто не хочешь идти за орехами, потому что в кустах кто-то шуршал.</p>
-        <p>— Там реально кто-то шуршал! — обиделся Краб. — Но сейчас серьёзно. Вождь Моллюск, подтверди.</p>
-        <p>Вождь Моллюск, дородный мужчина с бородой, в которой уже второй год гнездилась какая-то жизнерадостная пичуга, кивнул:</p>
-        <p>— Запасы ямса на нуле. Река выдаёт рыбы ровно столько, чтобы мы не уснули голодными, но и не наелись. Сезон сбора орехов ещё не наступил. А охота... — он печально посмотрел на своё копьё. — В последний раз я попал в дерево. Дерево убежало.</p>
+        <p>— Там реально кто-то шуршал! — обиделся Краб. — Но сейчас серьёзно. <span class="scribble-underline">Вождь Моллюск</span>, подтверди.</p>
+        <p>Вождь Моллюск, дородный мужчина с бородой, <span class="scribble-underline">в которой уже второй год гнездилась какая-то жизнерадостная пичуга</span>, кивнул:</p>
+        <p>— Запасы ямса на нуле. Река выдаёт рыбы ровно столько, чтобы мы не уснули голодными, но и не наелись. Сезон сбора орехов ещё не наступил. <span class="scribble-underline">А охота... — он печально посмотрел на своё копьё.</span> — В последний раз я попал в <span class="scribble-underline">дерево. Дерево</span> убежало.</p>
         <p>— Деревья не бегают, — заметила молодая охотница Скользкий Угорь.</p>
-        <p>— Это было очень мотивированное дерево, — мрачно ответил Моллюск.</p>
-        <p>Повисла пауза. В костре весело потрескивали дрова, которым было глубоко наплевать на продовольственный кризис.</p>
+        <p>— Это было очень мотивированное дерево, — <span class="scribble-underline">мрачно ответил Моллюск.</span></p>
+        <p><span class="scribble-underline">Повисла пауза.</span> В костре весело потрескивали дрова, которым было глубоко наплевать на продовольственный кризис.</p>
         <p>— Есть один вариант, — тихо сказал Краб.</p>
-        <p>Все посмотрели на него с подозрением. Прошлый «вариант» Краба привёл к тому, что они три дня отъедались от грибов, которые он назвал «просто немножко щипательными».</p>
-        <p>— Помните Португалию?</p>
+        <p><span class="scribble-underline">Все посмотрели на него с подозрением.</span> Прошлый «вариант» Краба привёл к тому, что они три дня отъедались от грибов, которые он назвал «просто немножко щипательными».</p>
+        <p><span class="scribble-underline">— Помните Португалию?</span></p>
       </div>
-      <div class="verdict" style="color: var(--paper-ink-faint);">— уехал в стэндап, штампы и кальки</div>
+      <div class="verdict" style="">:-( уехал в стэндап, штампы и кальки</div>
     </div>
   </div>
 
   <p class="body" style="margin-top: 12px;">
-    Как видно, у Deepseek огромное количество нейроштампов, несоблюдение условий. Как бы его не прогонять, не настраивать, он всегда будет терять контекст и генерить прям заметный нейро-текст. Я замечу, что этим грешат вообще все нейросетевые инструменты, просто в той или иной мере. Конкретно пример с Deepseek, так как это бесплатный инструмент, популярный у нас. Qwen ещё хуже будет, даже 3.6 max
+    Мы видим у Deepseek огромное количество нейроштампов и несоблюдение условий промта. Такая проблема наблюдается со всеми нейросетями на рынке: они теряют контекст, генерируют шаблонные ответы и теряют логику повествования. Соавтор создан конкретно для писателей, поэтому обучен избегать подобных проблем.
   </p>
   <p class="hand-note dim" style="margin-top: 4px;">конечно, всё на вкус и цвет ¯\\_(ツ)_/¯</p>
+
+  <div class="page-foot"><span>02 · соавторы</span><span class="pn">06</span></div>
+</section>
+
+<!-- ════════════════ Соавторы — четыре варианта + операции ════════════════ -->
+<section class="page" data-screen-label="07 Четыре варианта">
+  <div class="page-head">
+    <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
+    <div class="crumbs">02 · соавторы / подход</div>
+  </div>
+
+  <div class="eyebrow">★ четыре варианта на каждый шаг</div>
+  <h2 class="h2">Подход через варианты.</h2>
+  <p class="lede" style="max-width: 145mm;">
+    Соавтор предлагает четыре варианта продолжения сцены по 200–300 слов на каждый (в режиме прозы 1000+). Сцены создаются через органы чувств, других персонажей, ритм и так далее.
+  </p>
+
+  <div class="variants">
+    <div class="variant">
+      <div class="vt">↳ через детали / атмосферу </div>
+      <div class="vd">— Духи, — начал он и замолчал. Солнце било в глаз, слепило, но на языке не было ни вкуса, ни тепла.</div>
+    </div>
+    <div class="variant">
+      <div class="vt">↳ через органы чувств</div>
+      <div class="vd">Кислый запах перебродившей кассавы тянулся из глиняных мисок, которые женщины расставляли на циновке.</div>
+    </div>
+    <div class="variant">
+      <div class="vt">↳ через другого персонажа</div>
+      <div class="vd">Кво сидел на пороге хижины и наблюдал.<br/>— Ритуал не работает, если в чаше пусто.</div>
+    </div>
+    <div class="variant">
+      <div class="vt">↳ через ритм / разрыв</div>
+      <div class="vd">Макао упёрся ладонями в землю — сухая, растрескавшаяся глина царапала кожу. Он надавил сильнее, и пальцы провалились в пустоту. Под верхним слоем не было влаги. Ничего.</div>
+    </div>
+  </div>
+
+  <h3 class="h3" style="margin-top: 22px;">Что вообще умеет Соавтор</h3>
+  <div class="chip-row">
+    <span class="chip">опенинги</span>
+    <span class="chip">персонажи</span>
+    <span class="chip">элементы сеттинга</span>
+    <span class="chip">сцены</span>
+    <span class="chip">диалоги</span>
+    <span class="chip">главы целиком</span>
+    <span class="chip">редактура</span>
+    <span class="chip">органы чувств</span>
+    <span class="chip">сократить</span>
+    <span class="chip">расширить</span>
+  </div>
+  <p style="margin-top: 8px;">
+    Соавтор работает как с новыми абзацами и главами, так и с выделенным текстом.
+  </p>
+
+  <h3 class="h3" style="margin-top: 18px;">Что важно</h3>
+  <p>
+    Соавтор всегда знает всех персонажей и книгу и <b>не создаёт</b> персонажей, если об этом не попросить
+    напрямую текстом или свитчем.
+  </p>
+
+  <div class="row gap-sm" style="margin-top: 12px;">
+
+    <div class="media" style="flex: 1; height: 38mm;">
+      <img src="assets/6.jpg" />
+      <img src="assets/4.jpg" />
+      <img src="assets/5.jpg" />
+    </div>
+  </div>
 
   <div class="page-foot"><span>02 · соавторы</span><span class="pn">07</span></div>
 </section>
 
-<!-- ════════════════ 3. БЕТА-РИДЕРЫ ════════════════ -->
-<section class="page" data-screen-label="08 Бета-ридеры">
+<!-- ════════════════ 3. КАНОН ════════════════ -->
+<section class="page" data-screen-label="08 Канон">
   <div class="page-head">
     <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
-    <div class="crumbs">03 · бета-ридеры</div>
+    <div class="crumbs">03 · канон</div>
   </div>
 
   <div class="section-tag">Раздел 03</div>
-  <h1 class="h1">Бета-<span style="font-style: italic;">ридеры</span>.</h1>
-  <p class="lede" style="max-width: 145mm;">
-    Это читатели, которые проверяют текст на наличие различных проблем, деталей и ошибок. Проверки бывают шесть видов (на втором скриншоте).<br />
-
-    Бета-ридер читают всю рукопись или какие-то конкретные её элементы и даёт свой вердикт как читатель.<br />
-
-    У каждого бета-ридера свой характер, и можно создавать отдельные персоны под них.
-  </p>
-
-  <h3 class="h3" style="margin-top: 14px;">Шесть видов проверки</h3>
-  <div class="checks-row">
-    <span class="check-pill"><span class="lab">Канон</span><span>· персонажи, факты, сеттинг</span></span>
-    <span class="check-pill"><span class="lab">Темп</span><span>· где провисает</span></span>
-    <span class="check-pill"><span class="lab">Логика</span><span>· дыры и противоречия</span></span>
-    <span class="check-pill"><span class="lab">Эмоции</span><span>· где зацепило, где нет</span></span>
-    <span class="check-pill"><span class="lab">Стиль</span><span>· голос, ритм, штампы</span></span>
-    <span class="check-pill"><span class="lab">Финал</span><span>· насколько закрыты крючки</span></span>
-  </div>
-
-  <div class="row gap-sm" style="margin-top: 16px;">
-
-    <div class="media" style="flex: 1; height: 50mm;">
-      <img src="assets/7.jpg" />
-      <img src="assets/8.jpg" />
-    </div>
-    <div class="media" style="flex: 1; height: 50mm;">
-      <img src="assets/9.jpg" />
-      <img src="assets/10.jpg" />
-    </div>
-  </div>
-
-  <div class="page-foot"><span>03 · бета-ридеры</span><span class="pn">08</span></div>
-</section>
-
-<!-- ════════════════ 4. КАНОН ════════════════ -->
-<section class="page" data-screen-label="09 Канон">
-  <div class="page-head">
-    <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
-    <div class="crumbs">04 · канон</div>
-  </div>
-
-  <div class="section-tag">Раздел 04</div>
   <h1 class="h1">Канон.</h1>
   <p class="lede" style="max-width: 145mm;">
     Система структуризации всего вокруг конкретного произведения (сеттинг, персонажи, локации, другие элементы, их связи и прочее). Эдакий контекст по аналогии с yWriter, с постоянной возможностью его актуализировать и дополнять.
@@ -1797,7 +1740,49 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
   </div>
 
 
-  <div class="page-foot"><span>04 · канон</span><span class="pn">09</span></div>
+  <div class="page-foot"><span>03 · канон</span><span class="pn">08</span></div>
+</section>
+
+<!-- ════════════════ 4. БЕТА-РИДЕРЫ ════════════════ -->
+<section class="page" data-screen-label="09 Бета-ридеры">
+  <div class="page-head">
+    <div class="brand">Писатель <span class="amp">&amp;</span> Со</div>
+    <div class="crumbs">04 · бета-ридеры</div>
+  </div>
+
+  <div class="section-tag">Раздел 04</div>
+  <h1 class="h1">Бета-<span style="font-style: italic;">ридеры</span>.</h1>
+  <p class="lede" style="max-width: 145mm;">
+    Это читатели, которые проверяют текст на наличие различных проблем, деталей и ошибок. Проверки бывают шесть видов (на втором скриншоте).<br />
+
+    Бета-ридер читают всю рукопись или какие-то конкретные её элементы и даёт свой вердикт как читатель.<br />
+
+    У каждого бета-ридера свой характер, и можно создавать отдельные персоны под них.
+  </p>
+
+  <h3 class="h3" style="margin-top: 14px;">Шесть видов проверки</h3>
+  <div class="checks-row">
+    <span class="check-pill"><span class="lab">Нестыковки</span></span>
+    <span class="check-pill"><span class="lab">Характеры</span></span>
+    <span class="check-pill"><span class="lab">Мир</span></span>
+    <span class="check-pill"><span class="lab">Стиль</span></span>
+    <span class="check-pill"><span class="lab">Темп</span></span>
+    <span class="check-pill"><span class="lab">Сцены</span></span>
+  </div>
+
+  <div class="row gap-sm" style="margin-top: 16px;">
+
+    <div class="media" style="flex: 1; height: 50mm;">
+      <img src="assets/7.jpg" />
+      <img src="assets/8.jpg" />
+    </div>
+    <div class="media" style="flex: 1; height: 50mm;">
+      <img src="assets/9.jpg" />
+      <img src="assets/10.jpg" />
+    </div>
+  </div>
+
+  <div class="page-foot"><span>04 · бета-ридеры</span><span class="pn">09</span></div>
 </section>
 
 <!-- ════════════════ 5. ИМПОРТ ════════════════ -->
@@ -1831,7 +1816,7 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
       <div class="import-num">2</div>
       <div>
         <div class="import-label">Сплит на главы и сцены</div>
-        <div class="import-desc">Если разбиения нет, Соавтор автоматически определит разбиение.</div>
+        <div class="import-desc">Если разбиения нет, Соавтор автоматически определит главы.</div>
       </div>
     </div>
     <div class="import-step">
@@ -1888,17 +1873,16 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
   <div class="section-tag">Раздел 06</div>
   <h1 class="h1">Испытания.</h1>
   <p class="lede" style="max-width: 145mm;">
-    Здесь система замудрённая, конечно :) Это либо обучающий функционал, либо
-    мотивирующий, либо "разнообразывающий" прозу. Каждый этап проверяется
+    Функционал для обучения, мотивации и разнообразия существующих рукописей. Каждый этап проверяется
     Соавтором по реальной рукописи, которая создаётся прямо во время прохождения.
   </p>
 
   <h3 class="h3" style="margin-top: 14px;">Как устроено</h3>
   <p>
-    На самом  деле дофига зависит от вида испытания. Например, "Фэнтези за 30 дней" — N задач, по итогу которых человек
-    получает готовую рукопись в жанре, которую сам же и написал. Условные шаги: разбор основ → создай 5 элементов сеттинга → пролог
-    → первая глава с неявным появлением антагониста → 4000 слов → добавь природы в любую из глав и Соавтор оценит, ну и так далее.<br/>
-    На каждом этапе оценка идёт через ИИ.
+    Лучше всего показать на конкретном примере: испытание "Фэнтези за 30 дней" — N задач, по итогу которых человек
+    получает готовую рукопись, которую сам же и написал. Условные шаги: разбор основ → создай 5 элементов сеттинга → пролог
+    → первая глава с неявным появлением антагониста → 4000 слов → добавь природы в любую из глав и Соавтор оценит, и так далее.<br/>
+    На каждом этапе оценка идёт через Соавтора.
   </p>
 
   <div class="challenge-grid">
@@ -1965,7 +1949,7 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
       Я сам очень люблю писать, и конкретно мне нейросетка больше помогает побороть сложности с подбором правильных мыслей и идей, когда вертится что-то на языке, но не могу сформулировать :)
     </p>
     <p style="color: var(--paper-rule-soft); font-style: italic;">
-      Ну вот и всё :)  Остальное показывать/рассказывать особо смысла не вижу, там уже нюансы системы — по типу статистики, анонимности, частного функционала, рассылок, экспорта и прочее-прочее.
+      Ну вот и всё :)  Можно ещё многое рассказать про систему по типу описать как работает статистика, анонимность, рассылки, экспорт и прочее-прочее, но это останется за рамками данной презентации.
     </p>
 
     <div style="margin-top: 18px; padding: 18px 22px; border: 1.5px dashed var(--paper-highlight); border-radius: 4px; background: rgba(244,211,94,0.06);">
@@ -1973,7 +1957,7 @@ p.body { font-family: var(--body); font-size: 13.5px; line-height: 1.6; }
       <p style="color: var(--paper-cream); font-size: 16.5px; margin: 0; max-width: 130mm;">
         Пока тестирование — даю бесплатный доступ на максимальном плане
         с безлимитом слов и запросов. Взамен прошу репортить о багах
-        и «тупизме» нейросеток.
+        и ошибках Соавтора.
       </p>
     </div>
 
